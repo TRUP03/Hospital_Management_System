@@ -1,0 +1,53 @@
+
+#heading{
+   margin: auto 10%;
+}
+body{
+    height: max-content;
+    background-image: url('https://cdn.vectorstock.com/i/1000x1000/26/69/health-medical-concept-vector-6612669.webp');
+}
+footer {
+    position: relative;
+    right: 0;bottom:0;left:0;
+  }
+  .container{
+    display: flex;
+    justify-content: space space-around;
+    flex-wrap: wrap;
+  }
+  .second{
+    background-color:lightblue;
+    height:40%;
+    padding: 5%;
+   margin: 50px auto;
+  }
+  .cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  .card{
+    
+    border-style:outset;
+    box-shadow: 5px 10px lightcoral;
+    
+    
+  }
+  .btn-primary{
+    background-color: lightblue;
+    color: black;
+    border: 0ch;
+  }
+  .fa-laptop-medical{
+    color: lightcoral;
+  }
+  .form{
+    margin: 10% 20%;
+  }
+  .form-control{
+    border-color:lightcoral ;
+  }
+  .sign{
+    margin: 10% 20%;
+  }
