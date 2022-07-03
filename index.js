@@ -22,13 +22,33 @@ const Admin = new User({
     password: "Admin@123"
 });
 // Admin.save();
+const doctorSchema = new mongoose.Schema({
+    name:"string",
+    degree:"string",
+    specialisation:"string",
+    contact:"number"
+});
+const Doctor = mongoose.model("Doctor", doctorSchema);
 
+const doc1 = new Doctor({
+    name:"Ravi Singh",
+    degree:"MBBS",
+    specialisation:"cardiologist",
+    contact:"9877667788"
+});
+
+// doc1.save();
 
 app.listen(8080, () => {
     console.log("listenning at port 8080");
 });
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    Doctor.find({},(err,doctor)=>{
+        if(err)console.log("error");
+        else
+        res.render('home.ejs',{doctor:doctor});
+    });
+   
 });
 app.get('/login', (req, res) => {
     res.render('login.ejs');
@@ -39,7 +59,7 @@ app.get('/signin', (req, res) => {
 app.post('/admin', (req, res) => {
     const password = req.body.password;
     User.findOne({
-        _id: "62c0af4e4a3b1e2f99987a6d"
+        email:"admin@gmail.com"
     }, (err, result) => {
         if (err) {
             console.log(err);
@@ -47,6 +67,21 @@ app.post('/admin', (req, res) => {
             res.render('admin.ejs');
         }
     });
+});
+app.post('/', (req, res) => {
+    const name = req.body.name;
+    const degree = req.body.degree;
+    const specialisation = req.body.specialisation;
+    const contact = req.body.contact;
+
+    const doc = new Doctor({
+        name:name,
+        degree:degree,
+        specialisation:specialisation,
+        contact:contact
+    });
+    doc.save();
+   res.redirect('/');
 });
 
 app.set('view engine', 'ejs');
