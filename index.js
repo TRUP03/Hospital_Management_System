@@ -38,7 +38,9 @@ const doc1 = new Doctor({
 });
 
 // doc1.save();
-
+const navSchema = new mongoose.Schema({
+    
+});
 app.listen(8080, () => {
     console.log("listenning at port 8080");
 });
