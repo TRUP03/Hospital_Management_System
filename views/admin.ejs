@@ -1,0 +1,48 @@
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+<form action="/" method="post">
+  <div class="sign">
+    <h2>FastAppoint<i class="fa-solid fa-laptop-medical"></i></h2>
+    <form class="row g-3">
+      <div class="col-md-4">
+        <label for="validationDefault01" class="form-label" >Full Name</label>
+        <input type="text" class="form-control" id="validationDefault01" name="name" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label" >Degree</label>
+        <input type="text" class="form-control" id="validationDefault02" name="degree" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefaultUsername" class="form-label">contact No.</label>
+        <div class="input-group">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2"
+           name="contact" required>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationDefault04" class="form-label">Specilisation</label>
+        <select class="form_select" id="validationDefault04" name="specilisation" required>
+          <option class="special">Choose...</option>
+          <option class="special">Ophthalmologist<option>
+          <option class="special">Cardiologist</option>
+          <option class="special">Dermatologist</option>
+          <option class="special">Endocrinologists</option>
+          <option class="special">Colon and Rectal Surgeon</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+          <label class="form-check-label" for="invalidCheck2">
+            All are valid details
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Add Doctor</button>
+      </div>
+    </form>
+  </div>
+</form>
+<%- include('partials/footer') %>

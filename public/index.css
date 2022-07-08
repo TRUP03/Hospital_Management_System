@@ -1,4 +1,6 @@
-
+body{
+  margin:1rem;
+}
 #heading{
    margin: auto 10%;
 }
@@ -23,16 +25,16 @@ footer {
   }
   .cards{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    gap:1rem;
     margin-bottom: 50px;
+    
   }
   .card{
-    
+    min-height: 15rem;
     border-style:outset;
-    box-shadow: 5px 10px lightcoral;
-    
-    
+    box-shadow: 5px 5px 4px lightblue;  
   }
   .btn-primary{
     background-color: lightblue;
@@ -50,4 +52,8 @@ footer {
   }
   .sign{
     margin: 10% 20%;
+  }
+
+  .special{
+    width:30%;
   }
