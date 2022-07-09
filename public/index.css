@@ -36,10 +36,17 @@ footer {
     border-style:outset;
     box-shadow: 5px 5px 4px lightblue;  
   }
+  .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .btn-primary{
     background-color: lightblue;
     color: black;
     border: 0ch;
+    display: block;
   }
   .fa-laptop-medical{
     color: lightcoral;
