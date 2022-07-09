@@ -1,0 +1,42 @@
+<%- include('partials/head')%>
+
+
+   <%- include('partials/navbar')%>
+
+   <div class="form">
+    <h2>FastAppoint<i class="fa-solid fa-laptop-medical"></i></h2>
+   <form action="">
+    <section>
+        <label for="name">Your Name:</label>
+        <input type="text" class="form-control" placeholder="Name" id="name" name="name">
+        
+        <label for="speciality">Specialised In:</label>
+        <input type="text"  class="form-control" placeholder="speciality" id="speciality" name="speciality">
+    </section>
+    
+    <br>
+    <section>
+        <label for="contact-number">contact-number</label>
+        <input type="phone-number" class="form-control" placeholder="+91" id="contact-number"name="contact-number">
+       
+        <label for="email">Mail Id:</label>
+        <input type="email" class="form-control" placeholder="email" id="email" name="email">
+    </section>
+    
+     <br>
+    <section>
+        <label for="location">Availibity Location</label>
+        <input type="text" class="form-control" placeholder="clinic/hospital" id="location" name="location">
+    </section>
+    <br>
+
+    <section>
+        <label for="duration">Availability hours</label>
+        <input type="number"class="form-control" name="duration" id="duration">
+    </section>
+   
+    <button class="btn btn-primary" type="submit">Create Account</button>
+   </form>
+   </div>
+
+   <%- include('partials/footer')%>

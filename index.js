@@ -55,9 +55,12 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('login.ejs');
 });
-app.get('/signin', (req, res) => {
-    res.render('signin.ejs');
+app.get('/signinPatient', (req, res) => {
+    res.render('signinPatient.ejs');
 });
+app.get('/signinDoc',(req,res)=>{
+    res.render('signinDoc.ejs');
+})
 app.post('/admin', (req, res) => {
     const password = req.body.password;
     User.findOne({
