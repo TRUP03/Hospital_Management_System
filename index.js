@@ -1,51 +1,55 @@
 //jshint esversion:6
+require('dotenv').config();
 const express = require('express');
 const app = express();
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
 const path = require('path');
+const mongoose = require('mongoose');
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret:process.env.SECRET,
+    resave:false,
+    saveUninitialized:false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+// mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/logIns", {
+//     useNewUrlParser: true
+// });
+mongoose.connect("mongodb://localhost:27017/login", {useNewUrlParser: true});
 
-const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/logIns", {
-    useNewUrlParser: true
-});
 const userSchema = new mongoose.Schema({
-    email: "string",
+    name:"string",
+    speciality:"string",
+    contactNumber:"number",
+    username: "string",
+    location: "string",
+    state: "string",
+    duration: "number",
+    zip: "number",
     password: "string"
 });
+
+userSchema.plugin(passportLocalMongoose);
 const User = mongoose.model("User", userSchema);
-const Admin = new User({
-    email: "admin@gmail.com",
-    password: "Admin@123"
-});
-// Admin.save();
-const doctorSchema = new mongoose.Schema({
-    name:"string",
-    degree:"string",
-    specialisation:"string",
-    contact:"number"
-});
-const Doctor = mongoose.model("Doctor", doctorSchema);
 
-const doc1 = new Doctor({
-    name:"Ravi Singh",
-    degree:"MBBS",
-    specialisation:"cardiologist",
-    contact:"9877667788"
-});
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-// doc1.save();
-const navSchema = new mongoose.Schema({
-    
-});
-app.listen(8080, () => {
-    console.log("listenning at port 8080");
-});
+
 app.get('/', (req, res) => {
-    Doctor.find({},(err,doctor)=>{
+    User.find({},(err,doctor)=>{
         if(err)console.log("error");
         else
         res.render('home.ejs',{doctor:doctor});
@@ -53,6 +57,11 @@ app.get('/', (req, res) => {
    
 });
 app.get('/login', (req, res) => {
+    const user = new User({
+    email:req.body.email,
+    password:req.body.password
+    });
+   
     res.render('login.ejs');
 });
 app.get('/signinPatient', (req, res) => {
@@ -60,7 +69,48 @@ app.get('/signinPatient', (req, res) => {
 });
 app.get('/signinDoc',(req,res)=>{
     res.render('signinDoc.ejs');
-})
+});
+app.get('/patient',(req,res)=>{
+    if(req.isAuthenticated()){
+         res.render('patient.ejs');
+    }else{
+        res.redirect('/login');
+    }
+   
+});
+app.get('/doctor',(req,res)=>{
+    if(req.isAuthenticated()){
+        res.render('doctor.ejs');
+   }else{
+       res.redirect('/login');
+   }
+});
+app.post('/signinPatient',(req,res)=>{
+    User.register({username:req.body.username}, req.body.password, (err,user)=>{
+        if(err){
+            console.log(err);
+            res.redirect('/signinPatient');
+        }
+        else{
+            passport.authenticate('local')(req,res,()=>{
+                res.redirect('/patient');
+            });
+        }
+    });
+});
+app.post('/signinDoc',(req,res)=>{
+    User.register({username:req.body.username}, req.body.password, (err,user)=>{
+        if(err){
+            console.log(err);
+            res.redirect('/signinDoc');
+        }
+        else{
+            passport.authenticate('local')(req,res,()=>{
+                res.redirect('/doctor');
+            });
+        }
+    });
+});
 app.post('/admin', (req, res) => {
     const password = req.body.password;
     User.findOne({
@@ -89,7 +139,7 @@ app.post('/', (req, res) => {
    res.redirect('/');
 });
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.listen(8080, () => {
+    console.log("listenning at port 8080");
+});
