@@ -64,3 +64,11 @@ footer {
   .special{
     width:30%;
   }
+  .cards2{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap:1rem;
+    margin-bottom: 50px;
+   
+  }
