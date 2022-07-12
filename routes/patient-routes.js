@@ -43,6 +43,7 @@ router.post("/loginPatient", (req, res) => {
   router.post('/signinPatient',(req,res)=>{
     const patient = new patientModel({
       name:req.body.name,   
+      userType:"patient",
       username:req.body.username,
       location:req.body.location,
       state:req.body.state,

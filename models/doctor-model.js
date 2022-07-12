@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 const doctorSchema = new mongoose.Schema({
     name:"string",
+    userType:"string",
     speciality:"string",
     contactNumber:"number",
     username: "string",

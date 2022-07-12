@@ -48,6 +48,7 @@ router.post("/loginDoc", (req, res) => {
   router.post('/signinDoc',(req,res)=>{
     const doctor = new doctorModel({
       name:req.body.name,
+      usertype:"doctor",
       speciality:req.body.speciality,
       contactNumber:req.body.contactNumber,
       username:req.body.username,
