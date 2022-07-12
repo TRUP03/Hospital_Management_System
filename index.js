@@ -1,41 +1,60 @@
 //jshint esversion:6
+require('dotenv').config();
 const express = require('express');
 const app = express();
+const session = require('express-session');
+const passport = require('passport');
 const path = require('path');
+const mongoose = require('mongoose');
+const doctorModel = require('./models/doctor-model');
+const patientModel = require('./models/patient-model');
+const patientRoutes = require('./routes/patient-routes');
+const doctorRoutes = require('./routes/doctor-routes');
+const LocalStrategy = require('passport-local');
+
+//uses
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret:process.env.SECRET,
+    resave:false,
+    saveUninitialized:false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+// mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/logIns", {
+//     useNewUrlParser: true
+// });
 
-const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/logIns", {
-    useNewUrlParser: true
-});
-const userSchema = new mongoose.Schema({
-    email: "string",
-    password: "string"
-});
-const User = mongoose.model("User", userSchema);
-const Admin = new User({
-    email: "admin@gmail.com",
-    password: "Admin@123"
-});
-// Admin.save();
-const doctorSchema = new mongoose.Schema({
-    name:"string",
-    degree:"string",
-    specialisation:"string",
-    contact:"number"
-});
-const Doctor = mongoose.model("Doctor", doctorSchema);
+//mongoose connect
+mongoose.connect("mongodb://localhost:27017/login", {useNewUrlParser: true});
 
-const doc1 = new Doctor({
-    name:"Ravi Singh",
-    degree:"MBBS",
-    specialisation:"cardiologist",
-    contact:"9877667788"
-});
+//startegy local
+// passport.use(doctorModel.createStrategy());
+// passport.use(patientModel.createStrategy());
+passport.use('doctorlocal', new LocalStrategy(doctorModel.authenticate()));
+passport.use('patientlocal', new LocalStrategy(patientModel.authenticate()));
+//serialiaze
+passport.serializeUser(function (user, done) {
+    done(null, user.id);
+  });
+  
+  passport.deserializeUser((id, done) => {
+    patientModel.findById(id, (err, patient) => {
+      if (err) return done(err, null);
+      if (patient) return done(null, patient);
+      doctorModel.findById(id, (error, doctor) => {
+        if (error) return done(error, null);
+        if (doctor) return done(null, doctor);
+      });
+    });
+  });
 
 // doc1.save();
 const navSchema = new mongoose.Schema({
@@ -55,44 +74,12 @@ app.get('/searchDoc', (req, res) => {
     });
    
 });
-app.get('/login', (req, res) => {
-    res.render('login.ejs');
-});
-app.get('/signinPatient', (req, res) => {
-    res.render('signinPatient.ejs');
-});
-app.get('/signinDoc',(req,res)=>{
-    res.render('signinDoc.ejs');
-})
-app.post('/admin', (req, res) => {
-    const password = req.body.password;
-    User.findOne({
-        email:"admin@gmail.com"
-    }, (err, result) => {
-        if (err) {
-            console.log(err);
-        } else if (result.password === password) {
-            res.render('admin.ejs');
-        }
-    });
-});
-app.post('/', (req, res) => {
-    const name = req.body.name;
-    const degree = req.body.degree;
-    const specialisation = req.body.specialisation;
-    const contact = req.body.contact;
 
-    const doc = new Doctor({
-        name:name,
-        degree:degree,
-        specialisation:specialisation,
-        contact:contact
-    });
-    doc.save();
-   res.redirect('/');
+//using routes
+app.use( doctorRoutes);
+app.use( patientRoutes);
+
+//server listening
+app.listen(8080, () => {
+    console.log("listenning at port 8080");
 });
-
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-app.use(express.static(path.join(__dirname, 'public')));

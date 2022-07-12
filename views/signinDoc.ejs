@@ -5,7 +5,7 @@
 
    <div class="form">
     <h2>FastAppoint<i class="fa-solid fa-laptop-medical"></i></h2>
-   <form action="">
+   <form action="/signinDoc" method="post">
     <section>
         <label for="name">Your Name:</label>
         <input type="text" class="form-control" placeholder="Name" id="name" name="name">
@@ -17,10 +17,10 @@
     <br>
     <section>
         <label for="contact-number">contact-number</label>
-        <input type="phone-number" class="form-control" placeholder="+91" id="contact-number"name="contact-number">
+        <input type="phone-number" class="form-control" placeholder="+91" id="contact-number"name="contactNumber">
        
         <label for="email">Mail Id:</label>
-        <input type="email" class="form-control" placeholder="email" id="email" name="email">
+        <input type="email" class="form-control" placeholder="email" id="email" name="username">
     </section>
     
      <br>
@@ -34,7 +34,10 @@
         <label for="duration">Availability hours</label>
         <input type="number"class="form-control" name="duration" id="duration">
     </section>
-   
+    <section>
+        <label for="password">password</label>
+        <input type="password"class="form-control" name="password" id="password">
+    </section>
     <button class="btn btn-primary" type="submit">Create Account</button>
    </form>
    </div>
