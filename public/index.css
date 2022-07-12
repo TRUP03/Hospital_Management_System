@@ -36,6 +36,9 @@ footer {
     border-style:outset;
     box-shadow: 5px 5px 4px lightblue;  
   }
+  .card-title{
+    color: black;
+  }
   .btn-primary{
     background-color: lightblue;
     color: black;
