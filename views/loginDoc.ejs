@@ -1,0 +1,17 @@
+<%- include('partials/head')%>
+
+<%- include('partials/navbar')%>
+
+<div class="form">
+    <h2>FastAppoint<i class="fa-solid fa-laptop-medical"></i></h2>
+    <form action="/loginDoc" method="post">
+          <%- include('partials/form')%>
+    </form>
+  
+    <h4>Do not have an account?</h4>
+    <a href="/signinDoc">Doctor</a>
+    <br>
+    <a href="/signinPatient">Patient</a>
+    
+</div>
+<%- include('partials/footer')%>

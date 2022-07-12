@@ -9,9 +9,26 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">SignIn</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Doctor</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/loginDoc">Login</a></li>
+              <li><a class="dropdown-item" href="/signinDoc">Register</a></li>
+
+            </ul>
           </li>
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Patient</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/loginPatient">Login</a></li>
+              <li><a class="dropdown-item" href="/signinPatient">Register</a></li>
+            </ul>
+          </li>
+         
+          <!-- <li class="nav-item">
+            <a class="nav-link active" href="/login">SignIn</a>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li>
