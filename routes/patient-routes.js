@@ -2,6 +2,7 @@
 const express = require('express');
 const passport = require('passport');
 const patientModel = require('../models/patient-model');
+const doctorModel = require('../models/doctor-model');
 const router = express.Router({ mergeParams: true });
 
 router.post("/loginPatient", (req, res) => {
@@ -77,4 +78,28 @@ router.get('/signinPatient', (req, res) => {
 router.get('/loginPatient', (req, res) => {
     res.render('loginPatient.ejs');
   });
+
+router.get('/searchDoctor/:patientId', (req, res) => {
+  const data ={};
+  data.user=req.user;
+  data.patientId = req.params.patientId;
+    doctorModel.find({},(err,found)=>{
+      if(err){
+        console.log(err);
+      }else{
+          res.render('doctorSearch.ejs',{doctor:found, data:data});
+      }
+    });
+  
+  });
+
+router.get('/searchDoctor/:patientId/:doctorId', (req, res) => {
+    res.render('appointment-3.ejs');
+  });
+router.get('/logout',(req,res)=>{
+  req.logOut((err)=>{
+    console.log(err);
+  });
+  res.redirect('/');
+});
 module.exports = router;

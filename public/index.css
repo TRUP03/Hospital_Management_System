@@ -53,6 +53,7 @@ body{
 footer {
     position: relative;
     right: 0;bottom:0;left:0;
+    
   }
   /* .container{
     display: flex;
@@ -115,6 +116,10 @@ footer {
     text-decoration: none;
   
   }
+  .btn-primary:hover{
+    background-color:rgb(126, 159, 170) ;
+    color:white;
+  }
   .fa-laptop-medical{
     color: lightcoral;
     font-size: 40px;
@@ -156,6 +161,16 @@ footer {
 }
 .line:first-child{
   animation: anim 12s infinite;
+}
+.patient-portal{
+ display: flex;
+ flex-direction: column;
+ gap:2rem;
+ justify-content: center;
+ align-items: center;
+}
+.logOut{
+ margin-bottom: 20%;
 }
 @keyframes anim{
   0%{

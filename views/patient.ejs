@@ -1,4 +1,11 @@
 <%- include('partials/head')%>
 <%- include('partials/navbar');%>
-Secret patient <%= data.user.name %> hiii
+<div class="patient-portal">
+    <h2>
+     Welcome <%= data.user.name %>, on patient portal
+ </h2>
+<button type="button" class="btn btn-primary"><a href="/searchDoctor/<%= data.user._id %>">Book Appointment</a></button>
+<button type="button" class="btn btn-primary logOut" ><a href="/logout">Log out</a></button>
+</div>
+ 
 <%- include('partials/footer')%>
