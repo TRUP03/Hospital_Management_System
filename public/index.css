@@ -1,27 +1,82 @@
 body{
   margin:1rem;
+  font-family: 'Mukta';
+  height: max-content;
+
 }
-#heading{
+
+.container{
+  text-align: center;
+  position: absolute;
+  top:45%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:100%;
+  margin-bottom: 100px;
+}
+.container span{
+  display: block;
+}
+.heading{
+  font-size: 4em;
+  letter-spacing: 6px;
+  background: white;
+  margin-bottom: 10%;
+  position: relative;
+  animation: text 3s 1;
+}
+
+@keyframes text{
+  0%{
+    color: white;
+    margin-bottom: -40px;
+  }
+  30%{
+    initial-letter: 25px;
+    margin-bottom: -40px;
+  }
+  85%{
+    letter-spacing: 4px;
+    margin-bottom: -40px;
+  }
+}
+/* #heading{
    margin: auto 10%;
+   position: relative;
+   transition: color 3s;
+   font-size: 3.5em;
 }
-body{
-    height: max-content;
-    
-}
+#heading:hover{
+  color: lightcoral;
+} */
+
 footer {
     position: relative;
     right: 0;bottom:0;left:0;
   }
-  .container{
+  /* .container{
     display: flex;
     justify-content: space space-around;
     flex-wrap: wrap;
-  }
+  } */
   .second{
     background-color:lightblue;
-    height:40%;
-    padding: 5%;
-   margin: 50px auto;
+    
+    /* height:40%; */
+    padding: 2%;
+    margin: 350px auto 10% auto;
+   /* transition: background 3s; */
+   background-image: -webkit-linear-gradient(lightblue,lightcoral);
+   border-radius: 5px;
+  }
+  .description{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+  }
+  .heading2{
+    margin-bottom: 5%;
   }
   .cards{
     display: flex;
@@ -43,6 +98,8 @@ footer {
   }
   .fa-laptop-medical{
     color: lightcoral;
+    font-size: 40px;
+
   }
   .form{
     margin: 10% 20%;
@@ -65,3 +122,51 @@ footer {
     margin-bottom: 50px;
    
   }
+  h6{
+    text-decoration: none;
+    color: black;
+  }
+.animated-text{
+  position: relative;
+  
+  top:5%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding: 0 40px;
+  height: 60px;
+  overflow: hidden;
+}
+.line{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3em;
+  color: black;
+  line-height: 60px;
+
+}
+.line:first-child{
+  animation: anim 12s infinite;
+}
+@keyframes anim{
+  0%{
+    margin-top: 0;
+  }
+  16%{
+    margin-top: -60px;
+  }
+  33%{
+    margin-top: -120px;
+  }
+  50%{
+    margin-top: -180px;
+  }
+  66%{
+    margin-top: -120px;
+  }
+  82%{
+    margin-top: -60px;
+  }
+  100%{
+    margin-top: 0;
+  }
+}
