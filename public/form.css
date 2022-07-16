@@ -1,0 +1,10 @@
+body{
+    animation-name: colors;
+    animation: 4s;
+}
+@keyframes colors{
+    from{background-color: lightblue}
+    to{
+        background-color:lightcoral;
+    }
+}
