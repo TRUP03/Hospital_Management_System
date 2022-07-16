@@ -46,10 +46,22 @@ router.post("/loginDoc", (req, res) => {
   });
 
   router.post('/signinDoc',(req,res)=>{
-    doctorModel.register({username:req.body.username}, req.body.password, (err,user)=>{
+    const doctor = new doctorModel({
+      name:req.body.name,
+      usertype:"doctor",
+      speciality:req.body.speciality,
+      contactNumber:req.body.contactNumber,
+      username:req.body.username,
+      location: req.body.location,
+      duration: req.body.duration,
+    });
+    doctorModel.register(doctor, req.body.password, (err,user)=>{
           if(err){
               console.log(err);
-              res.redirect('/signinDoc');
+            const data = {};
+            data.user = req.user;
+            console.log(user);
+            res.render('signinDoc',{data});
           }
           else{
               passport.authenticate('local')(req,res,()=>{
@@ -61,7 +73,9 @@ router.post("/loginDoc", (req, res) => {
 
   router.get('/doctor',(req,res)=>{
     if(req.isAuthenticated()){
-        res.render('doctor');
+      const data ={};
+      data.user = req.user;
+        res.render('doctor',{data});
     }else{
         res.redirect('/loginDoc');
     }
@@ -71,3 +85,4 @@ router.get('/signinDoc',(req,res)=>{
     res.render('signinDoc.ejs');
 });
 module.exports = router;
+

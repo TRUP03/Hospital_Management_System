@@ -91,6 +91,9 @@ footer {
     border-style:outset;
     box-shadow: 5px 5px 4px lightblue;  
   }
+  .card-title{
+    color: black;
+  }
   .btn-primary{
     background-color: lightblue;
     color: black;
@@ -114,6 +117,13 @@ footer {
   .special{
     width:30%;
   }
+<<<<<<< HEAD
+.navbar{
+  position:sticky;
+  top: 0;
+  z-index: 1000;
+}
+=======
   .cards2{
     display: flex;
     justify-content: space-evenly;
@@ -122,6 +132,7 @@ footer {
     margin-bottom: 50px;
    
   }
+<<<<<<< HEAD
   h6{
     text-decoration: none;
     color: black;
@@ -170,3 +181,6 @@ footer {
     margin-top: 0;
   }
 }
+=======
+>>>>>>> f9dd606a137c2e6f5c8a4355ee087e6200b9a9c0
+>>>>>>> bea55483af9df8dd3466b5b89a88550491ca1494

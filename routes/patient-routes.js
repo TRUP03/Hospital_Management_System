@@ -41,13 +41,21 @@ router.post("/loginPatient", (req, res) => {
     });
   });
   router.post('/signinPatient',(req,res)=>{
-    patientModel.register({username:req.body.username}, req.body.password, (err,user)=>{
+    const patient = new patientModel({
+      name:req.body.name,   
+      userType:"patient",
+      username:req.body.username,
+      location:req.body.location,
+      state:req.body.state,
+      zip:req.body.zip,
+    });
+    patientModel.register(patient, req.body.password, (err,user)=>{
           if(err){
               console.log(err);
               res.redirect('/signinPatient');
           }
           else{
-              passport.authenticate('local')(req,res,()=>{
+              passport.authenticate('patientlocal')(req,res,()=>{
                   res.redirect('/patient');
               });
           }
@@ -55,7 +63,9 @@ router.post("/loginPatient", (req, res) => {
   });
   router.get('/patient',(req,res)=>{
     if(req.isAuthenticated()){
-         res.render('patient.ejs');
+      const data = {};
+      data.user = req.user;
+         res.render('patient.ejs',{data});
     }else{
         res.redirect('/login');
     }
