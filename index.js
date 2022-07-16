@@ -60,9 +60,6 @@ passport.serializeUser(function (user, done) {
 const navSchema = new mongoose.Schema({
     
 });
-app.listen(8080, () => {
-    console.log("listenning at port 8080");
-});
 app.get('/',(req,res)=>{
     res.render('landing.ejs');
 })
