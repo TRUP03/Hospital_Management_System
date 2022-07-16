@@ -80,11 +80,24 @@ footer {
   }
   .cards{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap:1rem;
+    /* gap:1rem; */
     margin-bottom: 50px;
     
+  }
+
+  .cards2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* gap:1rem; */
+    margin-bottom: 50px;
+  }
+  .w3-card-4{
+    text-align: center;
   }
   .card{
     min-height: 15rem;
@@ -98,6 +111,9 @@ footer {
     background-color: lightblue;
     color: black;
     border: 0ch;
+    text-align: center;
+    text-decoration: none;
+  
   }
   .fa-laptop-medical{
     color: lightcoral;
@@ -117,43 +133,26 @@ footer {
   .special{
     width:30%;
   }
-<<<<<<< HEAD
 .navbar{
   position:sticky;
   top: 0;
   z-index: 1000;
 }
-=======
-  .cards2{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap:1rem;
-    margin-bottom: 50px;
-   
-  }
-<<<<<<< HEAD
-  h6{
-    text-decoration: none;
-    color: black;
-  }
+
 .animated-text{
   position: relative;
-  
   top:5%;
   left:50%;
   transform: translate(-50%,-50%);
-  padding: 0 40px;
+  padding:0 40px;
   height: 60px;
   overflow: hidden;
 }
 .line{
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 3em;
-  color: black;
-  line-height: 60px;
-
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+    line-height: 60px;
 }
 .line:first-child{
   animation: anim 12s infinite;
@@ -181,6 +180,3 @@ footer {
     margin-top: 0;
   }
 }
-=======
->>>>>>> f9dd606a137c2e6f5c8a4355ee087e6200b9a9c0
->>>>>>> bea55483af9df8dd3466b5b89a88550491ca1494
