@@ -85,5 +85,11 @@ router.post("/loginDoc", (req, res) => {
 router.get('/signinDoc',(req,res)=>{
     res.render('signinDoc.ejs');
 });
+router.get('/logOutDoc',(req,res)=>{
+  req.logOut((err)=>{
+    console.log(err);
+  });
+  res.redirect('/');
+});
 module.exports = router;
 

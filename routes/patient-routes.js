@@ -116,7 +116,7 @@ router.post("/searchDoctor/:patientId/:doctorId",(req,res)=>{
   res.redirect('/patient').then((alert("Request Sent !!")));
 
 });  
-router.get('/logout',(req,res)=>{
+router.get('/logoutPat',(req,res)=>{
   req.logOut((err)=>{
     console.log(err);
   });
