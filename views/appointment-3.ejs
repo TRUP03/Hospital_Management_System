@@ -1,1 +1,23 @@
-hiii
+<%- include('partials/head')%>
+<%- include('partials/navbar');%>
+<div class="apoint3">
+    <h2 id="apoint3head">REQUEST APPOINTMENT</h2>
+    <form action="/searchDoctor/<%= data.patientId%>/<%= data.doctorId %>" method="post" id="appoint-form">
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input type="date" class="form-control" id="date" name="date">
+          <div id="emailHelp" class="form-text">Sunday is off day!!</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Time</label>
+          <input type="time" class="form-control" id="exampleInputPassword1" name="time">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Are you sure</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Request</button>
+      </form>
+</div>
+
+<%- include('partials/footer')%>
