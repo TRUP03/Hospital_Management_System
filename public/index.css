@@ -60,8 +60,19 @@ footer {
   .special{
     width:30%;
   }
+<<<<<<< HEAD
 .navbar{
   position:sticky;
   top: 0;
   z-index: 1000;
 }
+=======
+  .cards2{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap:1rem;
+    margin-bottom: 50px;
+   
+  }
+>>>>>>> f9dd606a137c2e6f5c8a4355ee087e6200b9a9c0
