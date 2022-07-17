@@ -60,15 +60,14 @@ passport.serializeUser(function (user, done) {
 const navSchema = new mongoose.Schema({
     
 });
-// app.listen(8080, () => {
-//     console.log("listenning at port 8080");
-// });
+
 app.get('/',(req,res)=>{
     res.render('landing.ejs');
 });
-// app.get('/searchDoc',(req,res)=>{
-//   res.render('searchDoc.ejs');
-// })
+
+app.get('/aboutUs',(req,res)=>{
+  res.render('about.ejs');
+});
 app.get('/searchDoc', (req, res) => {
     Doctor.find({},(err,doctor)=>{
         if(err)console.log("error");

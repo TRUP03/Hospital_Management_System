@@ -228,6 +228,21 @@ footer {
   display: flex;
   gap:4px;
 }
+.about{
+  display: flex;
+  gap:5%;
+  min-height: 80vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#about{
+  /* border: solid 1px rgb(152, 151, 151); */
+  width: 90vh;
+  padding: 10px;
+   min-width: 30vh;
+  /* border-radius: 10px;
+  box-shadow: 5px 5px 5px lightblue; */
+}
 @keyframes anim{
   0%{
     margin-top: 0;
