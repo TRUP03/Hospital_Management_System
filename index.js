@@ -28,12 +28,12 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-// mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/logIns", {
-//     useNewUrlParser: true
-// });
+mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/logIns", {
+    useNewUrlParser: true
+});
 
 //mongoose connect
-mongoose.connect("mongodb://localhost:27017/login", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/login", {useNewUrlParser: true});
 
 //startegy local
 // passport.use(doctorModel.createStrategy());

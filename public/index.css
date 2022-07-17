@@ -7,9 +7,9 @@ body{
 
 .container{
   text-align: center;
-  position: absolute;
-  top:45%;
-  left:50%;
+  position: relative;
+  top:30%;
+  left:40%;
   transform: translate(-50%,-50%);
   width:100%;
   margin-bottom: 100px;
@@ -68,6 +68,7 @@ footer {
    /* transition: background 3s; */
    background-image: -webkit-linear-gradient(lightblue,lightcoral);
    border-radius: 5px;
+   position: relative;
   }
   .description{
     display: flex;
@@ -94,6 +95,7 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     /* gap:1rem; */
+    margin-top: 10%;
     margin-bottom: 50px;
   }
   .w3-card-4{
@@ -141,8 +143,9 @@ footer {
 
 .animated-text{
   position: relative;
-  top:5%;
+  top:10%;
   left:50%;
+  bottom: 10%;
   transform: translate(-50%,-50%);
   padding:0 40px;
   height: 60px;
@@ -150,9 +153,11 @@ footer {
 }
 .line{
     text-transform: uppercase;
+    letter-spacing: 3px;
     text-align: center;
     font-size: 3em;
     line-height: 60px;
+    font-family: 'Mukta';
 }
 .line:first-child{
   animation: anim 12s infinite;
@@ -178,5 +183,72 @@ footer {
   }
   100%{
     margin-top: 0;
+  }
+}
+
+/* responsiveness */
+
+@media only screen and (max-width:800px) {
+  .container{
+    text-align: center;
+    position: relative;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:100%;
+    margin-bottom: 100px;
+  }
+  
+  .heading{
+    font-size: 3em;
+    letter-spacing: 3px;
+    background: white;
+    margin-bottom: 10%;
+    position: relative;
+    animation: text 3s 1;
+  }
+  .content{
+    padding:5%;
+  }
+}
+
+@media only screen and (max-width:300px){
+  .container{
+    text-align: center;
+    position: relative;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:100%;
+    margin-bottom: 100px;
+  }
+  .line{
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    text-align: center;
+    font-size: 2em;
+    line-height: 60px;
+    font-family: 'Mukta';
+}
+  
+  .heading{
+    font-size: 2.5em;
+    letter-spacing: 1.6px;
+    background: white;
+    margin-bottom: 10%;
+    position: relative;
+    animation: text 3s 1;
+  }
+  
+}
+@media only screen and (max-width:900px){
+  .cards2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* gap:1rem; */
+    margin-top: 20%;
+    margin-bottom: 50px;
   }
 }
