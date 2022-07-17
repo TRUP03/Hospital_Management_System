@@ -4,8 +4,11 @@
     <h2>
      Welcome <%= data.user.name %>, on patient portal
  </h2>
+ <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_iivslabn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 <button type="button" class="btn btn-primary" id="btn btn-primary"><a href="/searchDoctor/<%= data.user._id %>">Book Appointment</a></button>
 <button type="button" class="btn btn-primary logOut"  id="btn btn-primary"><a href="/logoutPat">Log out</a></button>
+
 <% if(data.appointment) {%> 
 <p id="appoint-msg"><%= data.appointment.status %> here appointment message will display !!</p>
 <% } %> 

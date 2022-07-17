@@ -82,10 +82,12 @@ footer {
   }
   .cards{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    /* flex-direction: row; */
+    justify-content:space-evenly;
     flex-wrap: wrap;
     margin-bottom: 50px;
+    margin-top: 25%;
+    position: relative;
     
   }
   .cards2{
@@ -116,8 +118,11 @@ footer {
     text-decoration: none;
   
   }
+  #btn-primary{
+    text-decoration: none;
+  }
   .btn-primary:hover{
-    background-color:#0078AA ;
+    background-color:lightcoral ;
     color:white;
   }
   .fa-laptop-medical{
@@ -170,6 +175,7 @@ footer {
  gap:2rem;
  justify-content: center;
  align-items: center;
+ padding-top: 10%;
 }
 .logOut{
  margin-bottom: 20%;
@@ -182,13 +188,14 @@ footer {
   height: 90vh;
 }
 #apoint3head{
-  padding: 0.5rem;
-  background-color: lightblue;
+  padding: 1.3%;
+  background-image: -webkit-linear-gradient(lightblue,lightcoral);
   border-radius: 10px;
   margin-bottom: 4rem;
 }
 #appoint-form{
   min-width:50vh;
+  padding: 0 10%;
 }
 #appoint-msg{
   background-color: #0078AA;
@@ -232,6 +239,14 @@ footer {
   100%{
     margin-top: 0;
   }
+}
+a{
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1 em;
+}
+a:hover{
+  color:white;
 }
 
 /* responsiveness */
