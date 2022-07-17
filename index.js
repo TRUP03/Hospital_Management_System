@@ -65,7 +65,7 @@ const navSchema = new mongoose.Schema({
 // });
 app.get('/',(req,res)=>{
     res.render('landing.ejs');
-})
+});
 // app.get('/searchDoc',(req,res)=>{
 //   res.render('searchDoc.ejs');
 // })

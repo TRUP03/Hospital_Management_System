@@ -1,4 +1,16 @@
 <%- include('partials/head')%>
 <%- include('partials/navbar');%>
-Secret doctor <%= data.user.name %> hiii
+
+<a href="/logOutDoc" class="btn btn-primary">Log out</a>
+<div class="doc-appoint">
+    <h5>Name of patient</h5>
+    <p>Date Time</p>
+    <section id="doc-btn">
+        <a href="" class="btn btn-primary">Accept</a>
+        <a href="" class="btn btn-primary">Change Time</a>
+    </section>
+
+</div>
+
+
 <%- include('partials/footer')%>

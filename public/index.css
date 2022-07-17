@@ -53,6 +53,7 @@ body{
 footer {
     position: relative;
     right: 0;bottom:0;left:0;
+    margin-top: 1rem;
   }
   /* .container{
     display: flex;
@@ -84,11 +85,9 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    /* gap:1rem; */
     margin-bottom: 50px;
     
   }
-
   .cards2{
     display: flex;
     flex-direction: row;
@@ -117,10 +116,13 @@ footer {
     text-decoration: none;
   
   }
+  .btn-primary:hover{
+    background-color:#0078AA ;
+    color:white;
+  }
   .fa-laptop-medical{
     color: lightcoral;
     font-size: 40px;
-
   }
   .form{
     margin: 10% 20%;
@@ -161,6 +163,52 @@ footer {
 }
 .line:first-child{
   animation: anim 12s infinite;
+}
+.patient-portal{
+ display: flex;
+ flex-direction: column;
+ gap:2rem;
+ justify-content: center;
+ align-items: center;
+}
+.logOut{
+ margin-bottom: 20%;
+}
+.apoint3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+#apoint3head{
+  padding: 0.5rem;
+  background-color: lightblue;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+}
+#appoint-form{
+  min-width:50vh;
+}
+#appoint-msg{
+  background-color: #0078AA;
+  color: white;
+  min-width: 40vh;
+}
+.doc-appoint{
+  border: solid 1px #0078AA;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 40vh;
+  margin: 0 40%;
+}
+#doc-btn{
+  display: flex;
+  gap:4px;
 }
 @keyframes anim{
   0%{

@@ -1,4 +1,14 @@
 <%- include('partials/head')%>
 <%- include('partials/navbar');%>
-Secret patient <%= data.user.name %> hiii
+<div class="patient-portal">
+    <h2>
+     Welcome <%= data.user.name %>, on patient portal
+ </h2>
+<button type="button" class="btn btn-primary" id="btn btn-primary"><a href="/searchDoctor/<%= data.user._id %>">Book Appointment</a></button>
+<button type="button" class="btn btn-primary logOut"  id="btn btn-primary"><a href="/logoutPat">Log out</a></button>
+<% if(data.appointment) {%> 
+<p id="appoint-msg"><%= data.appointment.status %> here appointment message will display !!</p>
+<% } %> 
+</div>
+ 
 <%- include('partials/footer')%>

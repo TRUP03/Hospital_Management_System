@@ -3,6 +3,7 @@ const express = require('express');
 const passport = require('passport');
 const doctorModel = require('../models/doctor-model');
 const router = express.Router({ mergeParams: true });
+const Appointment = require('../models/appointment-model');
 
 router.get('/loginDoc', (req, res) => {
     res.render('loginDoc.ejs');
@@ -83,6 +84,12 @@ router.post("/loginDoc", (req, res) => {
 
 router.get('/signinDoc',(req,res)=>{
     res.render('signinDoc.ejs');
+});
+router.get('/logOutDoc',(req,res)=>{
+  req.logOut((err)=>{
+    console.log(err);
+  });
+  res.redirect('/');
 });
 module.exports = router;
 
