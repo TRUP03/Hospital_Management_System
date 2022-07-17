@@ -210,8 +210,19 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 40vh;
-  margin: 0 40%;
+  min-width: 40vw;
+  /* margin: 0 40%; */
+  /* margin-top: 10%;
+  margin-bottom: 10%; */
+  box-shadow: 5px 5px 4px lightcoral; 
+  position: relative;  
+  
+}
+.appoint{
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 #doc-btn{
   display: flex;
@@ -247,6 +258,12 @@ a{
 }
 a:hover{
   color:white;
+}
+.logout{
+  text-align: center;
+  align-items: center;
+  margin-bottom: 5%;
+  position: relative;
 }
 
 /* responsiveness */
@@ -301,6 +318,22 @@ a:hover{
     margin-bottom: 10%;
     position: relative;
     animation: text 3s 1;
+  }
+  .doc-appoint{
+    border: solid 1px #0078AA;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 40vw;
+    /* margin: 0 40%; */
+    /* margin-top: 10%;
+    margin-bottom: 10%; */
+    box-shadow: 5px 5px 4px lightcoral; 
+    position: relative;  
+    
   }
   
 }

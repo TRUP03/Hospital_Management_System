@@ -1,15 +1,22 @@
 <%- include('partials/head')%>
 <%- include('partials/navbar');%>
 
-<a href="/logOutDoc" class="btn btn-primary">Log out</a>
-<div class="doc-appoint">
-    <h5>Name of patient</h5>
-    <p>Date Time</p>
-    <section id="doc-btn">
-        <a href="" class="btn btn-primary">Accept</a>
-        <a href="" class="btn btn-primary">Change Time</a>
-    </section>
+<div class="appoint">
+    <div class="doc-appoint">
+        <h5>Name of patient</h5>
+        <p>Date Time</p>
+        <section id="doc-btn">
+            <a href="" class="btn btn-primary">Accept</a>
+            <a href="" class="btn btn-primary">Change Time</a>
+        </section>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_zpjfsp1e.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    </div>
 
+</div>
+
+<div class="logout">
+    <a href="/logOutDoc" class="btn btn-primary">Log out</a>
 </div>
 
 
