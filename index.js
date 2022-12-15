@@ -63,13 +63,14 @@ app.get('/aboutUs',(req,res)=>{
   res.render('about.ejs');
 });
 app.get('/searchDoc', (req, res) => {
-    Doctor.find({},(err,doctor)=>{
+  doctorModel.find({},(err,doctor)=>{
         if(err)console.log("error");
         else
         res.render('searchDoc.ejs',{doctor:doctor});
     });
    
 });
+
 
 //using routes
 app.use( doctorRoutes);

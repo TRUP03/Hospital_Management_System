@@ -25,7 +25,15 @@ body{
   position: relative;
   animation: text 3s 1;
 }
+#docHeading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
+  padding: 1rem;
+ 
+}
 @keyframes text{
   0%{
     color: white;
@@ -63,7 +71,7 @@ footer {
   .second{
     background-color:lightblue;
     
-    /* height:40%; */
+    /* height:40% */
     padding: 2%;
     margin: 350px auto 10% auto;
    /* transition: background 3s; */
@@ -86,7 +94,6 @@ footer {
     justify-content:space-evenly;
     flex-wrap: wrap;
     margin-bottom: 50px;
-    margin-top: 25%;
     position: relative;
     
   }
@@ -273,7 +280,13 @@ a{
   letter-spacing: 1 em;
 }
 a:hover{
-  color:white;
+  letter-spacing: 0.01cm;
+}
+.doc-pat:hover{
+  background-color: lightcoral;
+  padding: 1.3px;
+  border-radius: 3px;
+  color: black;
 }
 .logout{
   text-align: center;

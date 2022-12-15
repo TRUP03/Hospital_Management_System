@@ -4,14 +4,15 @@
 
 <div class="form">
     <h2>FastAppoint<i class="fa-solid fa-laptop-medical"></i></h2>
+    <h6>For doctors only</h6>
     <form action="/loginDoc" method="post">
           <%- include('partials/form')%>
     </form>
   
     <h4>Do not have an account?</h4>
-    <a href="/signinDoc">Doctor</a>
+    <a href="/signinDoc" class="doc-pat">Doctor</a>
     <br>
-    <a href="/signinPatient">Patient</a>
+    <a href="/signinPatient" class="doc-pat">Patient</a>
     
 </div>
 <%- include('partials/footer')%>
