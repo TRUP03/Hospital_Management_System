@@ -1,7 +1,10 @@
 # FastAppoint (Hospital_Management_System)
+A user friendly reponsive website that aims at making appointments easier and faster.
+
 Website Link : https://fast-appoint.herokuapp.com
 
 The TechStack :
+
 frontend : HTML, CSS, JavaScript
 
 Backend : Node.js, Express.js, MongoDb
