@@ -54,10 +54,6 @@ passport.serializeUser(function (user, done) {
     });
   });
 
-// doc1.save();
-const navSchema = new mongoose.Schema({
-    
-});
 
 app.get('/',(req,res)=>{
     res.render('landing.ejs');
