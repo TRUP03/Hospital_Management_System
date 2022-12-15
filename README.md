@@ -1,6 +1,10 @@
 # FastAppoint (Hospital_Management_System)
 Website Link : https://fast-appoint.herokuapp.com
 
+The TechStack :
+frontend : HTML, CSS, JavaScript
+Backend : Node.js, Express.js, MongoDb
+
 Home:
 ![home](https://user-images.githubusercontent.com/98757259/179452625-b2b50df6-721e-4aaa-ba5a-9b06f7566ee8.png)
 
