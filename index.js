@@ -77,11 +77,11 @@ app.use( doctorRoutes);
 app.use( patientRoutes);
 
 let port = process.env.PORT;
-if(port==null || port=="")
-{
-  port = 8080;
-}
+// if(port==null || port=="")
+// {
+//   port = 8080;
+// }
 //server listening
 app.listen(port, () => {
-    console.log("listenning at port 8080");
+    console.log("listenning at port " + port);
 });
