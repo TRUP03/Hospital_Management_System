@@ -1,7 +1,7 @@
 # FastAppoint (Hospital_Management_System)
 A user friendly reponsive website that aims at making appointments easier and faster.
 
-Website Link : https://fast-appoint.herokuapp.com
+Website Link : https://docappoint.onrender.com/
 
 The TechStack :
 
